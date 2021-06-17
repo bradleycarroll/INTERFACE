@@ -7,7 +7,7 @@ namespace INTERFACE.Models
 {
     public class Exclusion
     {
-        public DateTime Logtime { get; set; }
+        public string Logtime { get; set; }
         public int Id { get; set; }
         public string App { get; set; }
         public string Entity { get; set; }

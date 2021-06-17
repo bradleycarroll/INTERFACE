@@ -12,12 +12,18 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <!-- Logtime is auto filled by Javascript and is not editable, generated Datetime.now on page load-->
+
             <div class="form-group">
                 <label asp-for="Logtime" class="control-label"></label>
-                <input asp-for="Logtime" class="form-control" />
-                <span asp-validation-for="Logtime" class="text-danger"></span>
+                <input asp-for="Logtime" class="form-control" id="myInputID" readonly />
             </div>
             <input type="hidden" asp-for="Id" />
+
+
+            <!-- this app field needs to be made into a list either from DB or select list -->
+
             <div class="form-group">
                 <label asp-for="App" class="control-label"></label>
                 <input asp-for="App" class="form-control" />
@@ -28,15 +34,19 @@
                 <input asp-for="Entity" class="form-control" />
                 <span asp-validation-for="Entity" class="text-danger"></span>
             </div>
+            <!-- need a solution here as when edit the page the updat edate looks clunky
+    need to potentiall display the old date grayed out above and if no change to form keep old value-->
+
+            <!---->
             <div class="form-group">
                 <label asp-for="ExpiryDate" class="control-label"></label>
-                <input asp-for="ExpiryDate" class="form-control" />
+                <input asp-for="ExpiryDate" class="form-control" readonly />
                 <span asp-validation-for="ExpiryDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                @Html.LabelFor(model => model.ExpiryDate)
+                @Html.TextBoxFor(model => model.ExpiryDate, new { @type = "date", @class = "form-control datepicker" })
+                @Html.ValidationMessageFor(model => model.ExpiryDate, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
