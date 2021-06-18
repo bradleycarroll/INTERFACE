@@ -15,15 +15,17 @@
             <!-- Logtime is auto filled by Javascript and is not editable, generated Datetime.now on page load-->
             <div class="form-group">
                 <label asp-for="Logtime" class="control-label"></label>
-                <input asp-for="Logtime" class="form-control" id="myInputID" readonly/>
-             </div>
+                <input asp-for="Logtime" class="form-control" id="myInputID" readonly />
+            </div>
 
-            <!-- this app field needs to be made into a list either from DB or select list -->
+            <!--Populated drop down from JS list-->
             <div class="form-group">
                 <label asp-for="App" class="control-label"></label>
-                <input asp-for="App" class="form-control" style="text-transform:uppercase" autofocus />
-                <span asp-validation-for="App" class="text-danger"></span>
+                <select asp-for="App" id="select" class="form-control">
+                    <option value="All">ALL</option>
+                </select>
             </div>
+
             <div class="form-group">
                 <label asp-for="Entity" class="control-label"></label>
                 <input asp-for="Entity" class="form-control" />
@@ -43,7 +45,7 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
-            
+
         </form>
     </div>
 </div>
