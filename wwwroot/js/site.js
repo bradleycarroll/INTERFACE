@@ -27,3 +27,5 @@ for (let i = 0; i < arr.length; i++)
     option.appendChild(txt);
     select.insertBefore(option, select.lastChild);
 }
+
+

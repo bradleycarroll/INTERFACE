@@ -26,33 +26,39 @@
 
             <div class="form-group">
                 <label asp-for="App" class="control-label"></label>
-                <input asp-for="App" class="form-control" />
+                <input asp-for="App" class="form-control" readonly />
                 <span asp-validation-for="App" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Entity" class="control-label"></label>
-                <input asp-for="Entity" class="form-control" />
+                <input asp-for="Entity" class="form-control" readonly />
                 <span asp-validation-for="Entity" class="text-danger"></span>
             </div>
             <!-- need a solution here as when edit the page the updat edate looks clunky
     need to potentiall display the old date grayed out above and if no change to form keep old value-->
-
-            <!---->
-            <div class="form-group">
-                <label asp-for="ExpiryDate" class="control-label"></label>
-                <input asp-for="ExpiryDate" class="form-control" readonly />
-                <span asp-validation-for="ExpiryDate" class="text-danger"></span>
-            </div>
+            <!--
+    <div class="form-group">
+        <label asp-for="ExpiryDate" class="control-label">Current Expiry</label>
+        <input asp-for="ExpiryDate" class="form-control" />
+        <span asp-validation-for="ExpiryDate" class="text-danger"></span>
+    </div>
+        -->
             <div class="form-group">
                 @Html.LabelFor(model => model.ExpiryDate)
                 @Html.TextBoxFor(model => model.ExpiryDate, new { @type = "date", @class = "form-control datepicker" })
                 @Html.ValidationMessageFor(model => model.ExpiryDate, "", new { @class = "text-danger" })
             </div>
             <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
-    </div>
+</div>
 </div>
 
 <div>
